@@ -100,9 +100,6 @@ I am {{ hamburgers }}
 
 
 
-
-
-
 ## Functions & Filters
 
 ```
@@ -143,6 +140,16 @@ I am {{ hamburgers }}
 ``` 
 
 ```
+#  title
+{{ 'the apple is green'|title }}
+``` 
+
+```
+#  capitalize
+{{ 'how are you'|capitalize }}
+``` 
+
+```
 #  lowercase
 {{ 'HOWDY'|lower }}
 ``` 
@@ -155,6 +162,42 @@ I am {{ hamburgers }}
 ```
 #  without 
 {{ content|without('links') }} // removes content.links
+``` 
+
+```
+#  date 
+{% if date(user.created_at) < date() %} {% endif %} 
+``` 
+
+```
+#  default 
+{{ var|default('var is not defined') }}
+``` 
+
+```
+#  length  
+{% if users|length > 10 %} {% endif %}
+``` 
+
+```
+#  trim: whitespace or chars  
+{{ '  I like Twig.'|trim('.') }}
+``` 
+
+
+```
+#  merge: add to array 
+{% set values = values|merge(['cat', 'dog']) %} 
+``` 
+
+```
+#  nl2br converts to <br>
+{{ "Let us have apples\nIt will be great"|nl2br }} 
+``` 
+
+```
+#  number_format
+{{ 9800.333|number_format(2, '.', ',') }}
 ``` 
 
 
