@@ -30,6 +30,11 @@ I am {{ hamburgers }}
 ## Comparison & Control  
 
 ```
+#  foreach loop for myarray
+{% for arrayfor in myarray %} {% endfor %}
+``` 
+
+```
 #  or
 {% if (a or b) %} {% endif %} 
 ```
@@ -65,9 +70,37 @@ I am {{ hamburgers }}
 ```
  
 ```
-#  foreach loop for myarray
-{% for arrayfor in myarray %} {% endfor %}
+#  starts with 
+{% if 'Fudge' starts with 'F' %} {% endif %}
 ``` 
+
+```
+#  ends with 
+{% if 'Funky' ends with 'y' %} {% endif %}
+``` 
+
+
+```
+#  contained within  
+{{ 1 in [1, 2, 3] }}
+{{ 'cd' in 'abcde' }}
+``` 
+
+
+```
+#  ternary 
+{{ funky ? 'yes' : 'no' }} 
+``` 
+
+
+```
+#  regex 
+{% if numbers matches '/^[\\d\\.]+$/' %} {% endif %}
+``` 
+
+
+
+
 
 
 ## Functions & Filters
@@ -88,6 +121,17 @@ I am {{ hamburgers }}
 {{ myarray }}
 ``` 
 
+
+```
+#  safe join 
+{{ [1, 2, 3]|safe_join('|') }} is 1|2|3
+``` 
+
+```
+#  escape 
+{{ user.username|escape }}
+``` 
+
 ```
 #  filter proper class
 <div class="icon-{{ item.title|clean_class }}" >
@@ -97,6 +141,23 @@ I am {{ hamburgers }}
 #  filter proper id
 <div id="icon-{{ item.title|clean_id }}" >
 ``` 
+
+```
+#  lowercase
+{{ 'HOWDY'|lower }}
+``` 
+
+```
+#  uppercase
+{{ 'howdy'|upper }}
+``` 
+
+```
+#  without 
+{{ content|without('links') }} // removes content.links
+``` 
+
+
 
 ## Debug & Searching
 
@@ -139,4 +200,8 @@ I am {{ hamburgers }}
 
 
 
+
+## Misc References
+
+[Drupal-defined Twig Filters](https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Template%21TwigExtension.php/function/TwigExtension%3A%3AgetFilters/8)
 
