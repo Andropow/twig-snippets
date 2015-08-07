@@ -30,17 +30,17 @@ I am {{ hamburgers }}
 ## Comparison & Control  
 
 ```
-#  foreach loop for myarray
+# foreach loop for myarray
 {% for arrayfor in myarray %} {% endfor %}
 ``` 
 
 ```
-#  or
+# or
 {% if (a or b) %} {% endif %} 
 ```
 
 ```
-#  and
+# and
 {% if (a and b) %} {% endif %} 
 ```
 
@@ -50,51 +50,51 @@ I am {{ hamburgers }}
 ``` 
 
 ```
-#  not empty 
+# not empty 
 {% if myarray is not empty %} {% endif %}
 ``` 
 
 ```
-#  isset 
+# isset 
 {% if myarray is defined %} {% endif %}
 ``` 
 
 ```
-#  !isset
+# !isset
 {% if myarray is not defined %} {% endif %}
 ``` 
 
 ```
-#  greater than 
+# greater than 
 {% if myarray.length > 0 %} {% endif %} 
 ```
  
 ```
-#  starts with 
+# starts with 
 {% if 'Fudge' starts with 'F' %} {% endif %}
 ``` 
 
 ```
-#  ends with 
+# ends with 
 {% if 'Funky' ends with 'y' %} {% endif %}
 ``` 
 
 
 ```
-#  contained within  
+# contained within  
 {{ 1 in [1, 2, 3] }}
 {{ 'cd' in 'abcde' }}
 ``` 
 
 
 ```
-#  ternary 
+# ternary 
 {{ funky ? 'yes' : 'no' }} 
 ``` 
 
 
 ```
-#  regex 
+# regex 
 {% if numbers matches '/^[\\d\\.]+$/' %} {% endif %}
 ``` 
 
@@ -103,118 +103,118 @@ I am {{ hamburgers }}
 ## Functions & Filters
 
 ```
-#  check_plain 
+# check_plain 
 {{ myarray.acorn|striptags }} 
 ``` 
 
 ```
-#  translate 
+# translate 
 {{ myarray.acorn|t }} 
 {{ 'Hello @acorn'|t({ '@acorn': myarray.acorn }) }}
 ``` 
 
 ```
-#  implode array of strings, done automatically in D8 twig 
+# implode array of strings, done automatically in D8 twig 
 {{ myarray }}
 ``` 
 
 ```
-#  safe join 
+# safe join 
 {{ [1, 2, 3]|safe_join('|') }} is 1|2|3
 ``` 
 
 ```
-#  escape 
+# escape 
 {{ user.username|escape }}
 ``` 
 
 ```
-#  filter proper class
+# filter proper class
 <div class="icon-{{ item.title|clean_class }}" >
 ``` 
 
 ```
-#  filter proper id
+# filter proper id
 <div id="icon-{{ item.title|clean_id }}" >
 ``` 
 
 ```
-#  title
+# title
 {{ 'the apple is green'|title }}
 ``` 
 
 ```
-#  capitalize
+# capitalize
 {{ 'how are you'|capitalize }}
 ``` 
 
 ```
-#  lowercase
+# lowercase
 {{ 'HOWDY'|lower }}
 ``` 
 
 ```
-#  uppercase
+# uppercase
 {{ 'howdy'|upper }}
 ``` 
 
 ```
-#  without 
+# without 
 {{ content|without('links') }} // removes content.links
 ``` 
 
 ```
-#  date 
+# date 
 {% if date(user.created_at) < date() %} {% endif %} 
 ``` 
 
 ```
-#  default 
+# default 
 {{ var|default('var is not defined') }}
 ``` 
 
 ```
-#  length  
+# length  
 {% if users|length > 10 %} {% endif %}
 ``` 
 
 ```
-#  trim: whitespace or chars  
+# trim: whitespace or chars  
 {{ '  I like Twig.'|trim('.') }}
 ``` 
 
 ```
-#  merge: add to array 
+# merge: add to array 
 {% set values = values|merge(['cat', 'dog']) %} 
 ``` 
 
 ```
-#  nl2br converts to <br>
+# nl2br converts to <br>
 {{ "Let us have apples\nIt will be great"|nl2br }} 
 ``` 
 
 ```
-#  formatting numbers
+# formatting numbers
 {{ 9800.333|number_format(2, '.', ',') }}
 ``` 
 
 ```
-#  reverse
+# reverse
 {{ '1234'|reverse }}
 ``` 
 
 ```
-#  round
+# round
 {{ 23.535|round(1, 'floor') }}
 ``` 
 
 ```
-#  slice
+# slice
 {{ '12345'|slice(1, 2) }}  // 23
 ``` 
 
 ```
-#  sort an array 
+# sort an array 
 {% users|sort %}
 ``` 
 
@@ -224,29 +224,29 @@ I am {{ hamburgers }}
 ## Debug & Searching
 
 ```
-#  using kint in twig file 
+# using kint in twig file 
 {{ kint(page.content) }}
 ``` 
 
 ```
-#  print variable
+# print variable
 {{ dump(var) }}
 ``` 
 
 ```
-#  print all variables
+# print all variables
 {{ dump(_context) }}
 ``` 
 
 ```
-#  print only keys 
+# print only keys 
 {{ dump(_context|keys) }}
 ``` 
 
 ```
-#  print formatted keys or value 
+# print formatted keys or value 
 {% for key, value in _context %}
- <li>{{ key }}</li>
+  <li>{{ key }}</li>
 {% endfor %}
 ``` 
 
@@ -255,12 +255,12 @@ I am {{ hamburgers }}
 ## Common Workflows
 
 ```
-#  chaining filters
+# chaining filters
 {{ 'how are you'|capitalize|clean_class }}
 ``` 
 
 ```
-#  add new class to attributes array 
+# add new class to attributes array 
 {% set classes = ['region-' ~ region|clean_class] %}
 <div{{ attributes.addclass(classes) }}>
 ``` 
