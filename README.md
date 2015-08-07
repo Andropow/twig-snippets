@@ -13,6 +13,11 @@ I am {{ hamburgers }}
 ``` 
 
 ```
+# string together
+{{ 'I am ' ~ var.something }}
+``` 
+
+```
 # set a variable
 {% set var = content.string %}
 ``` 
@@ -65,8 +70,7 @@ I am {{ hamburgers }}
 ``` 
 
 
-## Functions & Filters   
-
+## Functions & Filters
 
 ```
 #  check_plain 
@@ -84,9 +88,17 @@ I am {{ hamburgers }}
 {{ myarray }}
 ``` 
 
+```
+#  filter proper class
+<div class="icon-{{ item.title|clean_class }}" >
+``` 
+
+```
+#  filter proper id
+<div id="icon-{{ item.title|clean_id }}" >
+``` 
 
 ## Debug & Searching
-
 
 ```
 #  using kint in twig file 
@@ -115,6 +127,15 @@ I am {{ hamburgers }}
 {% endfor %}
 ``` 
 
+
+
+## Common Workflows
+
+```
+#  add new class to attributes array 
+{% set classes = ['region-' ~ region|clean_class] %}
+<div{{ attributes.addclass(classes) }}>
+``` 
 
 
 
