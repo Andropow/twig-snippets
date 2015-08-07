@@ -1,4 +1,4 @@
-# Working Collection of Twig Snippets for D8
+# Collection of D8 Twig Snippets
 
 ## Basics
 
@@ -68,6 +68,38 @@ I am {{ hamburgers }}
 #  implode array of strings, done automatically in D8 twig 
 {{ myarray }}
 ``` 
+
+
+## Debug & Searching
+
+
+```
+#  using kint in twig file 
+{{ kint(page.content) }}
+``` 
+
+```
+#  print variable
+{{ dump(var) }}
+``` 
+
+```
+#  print  available variables
+{{ dump(_context) }}
+``` 
+
+```
+#  print only keys 
+{{ dump(_context|keys) }}
+``` 
+
+```
+#  print formatted keys or value 
+{% for key, value in _context %}
+ <li>{{ key }}</li>
+{% endfor %}
+``` 
+
 
 
 
