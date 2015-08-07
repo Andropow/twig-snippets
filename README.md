@@ -25,6 +25,16 @@ I am {{ hamburgers }}
 ## Comparison & Control  
 
 ```
+#  or
+{% if (a or b) %} {% endif %} 
+```
+
+```
+#  and
+{% if (a and b) %} {% endif %} 
+```
+
+```
 # if conditional
 {% if myarray %} {% endif %}
 ``` 
@@ -35,12 +45,17 @@ I am {{ hamburgers }}
 ``` 
 
 ```
-#  isset() 
+#  isset 
 {% if myarray is defined %} {% endif %}
 ``` 
 
 ```
-#  comparison 
+#  !isset
+{% if myarray is not defined %} {% endif %}
+``` 
+
+```
+#  greater than 
 {% if myarray.length > 0 %} {% endif %} 
 ```
  
@@ -84,7 +99,7 @@ I am {{ hamburgers }}
 ``` 
 
 ```
-#  print  available variables
+#  print all variables
 {{ dump(_context) }}
 ``` 
 
