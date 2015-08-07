@@ -118,7 +118,6 @@ I am {{ hamburgers }}
 {{ myarray }}
 ``` 
 
-
 ```
 #  safe join 
 {{ [1, 2, 3]|safe_join('|') }} is 1|2|3
@@ -184,7 +183,6 @@ I am {{ hamburgers }}
 {{ '  I like Twig.'|trim('.') }}
 ``` 
 
-
 ```
 #  merge: add to array 
 {% set values = values|merge(['cat', 'dog']) %} 
@@ -196,9 +194,30 @@ I am {{ hamburgers }}
 ``` 
 
 ```
-#  number_format
+#  formatting numbers
 {{ 9800.333|number_format(2, '.', ',') }}
 ``` 
+
+```
+#  reverse
+{{ '1234'|reverse }}
+``` 
+
+```
+#  round
+{{ 23.535|round(1, 'floor') }}
+``` 
+
+```
+#  slice
+{{ '12345'|slice(1, 2) }}  // 23
+``` 
+
+```
+#  sort an array 
+{% users|sort %}
+``` 
+
 
 
 
@@ -236,15 +255,31 @@ I am {{ hamburgers }}
 ## Common Workflows
 
 ```
+#  chaining filters
+{{ 'how are you'|capitalize|clean_class }}
+``` 
+
+```
 #  add new class to attributes array 
 {% set classes = ['region-' ~ region|clean_class] %}
 <div{{ attributes.addclass(classes) }}>
 ``` 
 
 
+## References
 
 
-## Misc References
+[Comparison of PHPTemplate and Twig theming paradigms](https://www.drupal.org/node/1918824)
+
+[Working With Twig Templates](https://www.drupal.org/node/2186401)
+
+[Debugging Twig templates](https://www.drupal.org/node/1906392)
+
+[Filters - Modifying Variables In Twig Templates](https://www.drupal.org/node/2357633)
+
+[Functions - In Twig Templates](https://www.drupal.org/node/2486991)
+
+[Twig best practices - preprocess functions and templates](https://www.drupal.org/node/1920746)
 
 [Drupal-defined Twig Filters](https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Template%21TwigExtension.php/function/TwigExtension%3A%3AgetFilters/8)
 
