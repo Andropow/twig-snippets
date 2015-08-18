@@ -103,7 +103,7 @@ I am {{ hamburgers }}
 ## Functions & Filters
 
 ```
-# check_plain 
+# strip_tags
 {{ myarray.acorn|striptags }} 
 ``` 
 
