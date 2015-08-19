@@ -114,8 +114,9 @@ I am {{ hamburgers }}
 ``` 
 
 ```
-# implode array of strings, done automatically in D8 twig 
-{{ myarray }}
+# Renderable arrays can be printed by default 
+{% set numbers = [{'#markup': 'One'}, {'#markup':'Two'}, {'#other':'Three'}] %}
+{{ numbers }} // prints 'OneTwo' 
 ``` 
 
 ```
