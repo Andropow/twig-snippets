@@ -109,7 +109,7 @@ I am {{ hamburgers }}
 
 ```
 # translate 
-{{ myarray.acorn|t }} 
+{{ 'Hello, World|t }} 
 {{ 'Hello @acorn'|t({ '@acorn': myarray.acorn }) }}
 ``` 
 
